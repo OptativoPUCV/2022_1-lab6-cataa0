@@ -34,7 +34,7 @@ Node* read_file (char* file_name){
 }
 
 void print_node(Node* n){
-    int i,j;
+    int i, j;
     for(i=0;i<9;i++){
        for(j=0;j<9;j++)
           printf("%d ", n->sudo[i][j]);
@@ -44,13 +44,12 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-  int i, j;
+  int i, j, a, c, flag = 0, si;
   for(i=0;i<9;i++)
     for(j=0;j<9;j++)
     {
         scanf("%c",&c);
         a[i][j]=c-'0';
-    return 1;
   for(i=0;i<9;i++){
     flag=0x0000;
     for(j=0;j<9;j++)
