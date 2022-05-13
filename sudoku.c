@@ -44,41 +44,21 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-  int i, j, c, flag = 0, si;
-  for(i=0;i<9;i++)
-    for(j=0;j<9;j++)
-    {
-        scanf("%c",&c);
-        n[i][j]=c-'0';
-  for(i=0;i<9;i++){
-    flag=0x0000;
-    for(j=0;j<9;j++)
-        flag|=1<<(n[i][j]-1);
-    if(flag!=0x01FF)
-        reporta("fila",i,j-1);
-  }  
-  for(j=0;j<9;j++){
-    flag=0x0000;
-    for(i=0;i<9;i++)
-        flag|=1<<(n[i][j]-1);
-    if(flag!=0x01FF)
-    reporta("col",i-1,j);
-  }
-  for(si=0;si<3;si++){
-    for(sj=0;sj<3;sj++)
-    {
-        flag=0x0000;
-        for(i=0;i<3;i++)
-        {
-            for(j=0;j<3;j++)
-                flag|=1<<(n[si*3+i][sj*3+j]-1);
-
+  int f, c, k;
+  for(f = 0 ; f < 9 ; f++){
+    for(c = 0 ; c < 9 ; c++){
+      if(n->sudo[f][c]){
+        for(k = c + 1 ; k < 9 ; k++){
+          if(n->sudo[f][c] == n->sudo[f][c]){
+            printf("ERROR fila %hd\n", f);
+            return 0;
+            
+          }
         }
-        if(flag!=0x01FF)
-            reporta("bloque",si*3+i-1,sj*3+j-1);
+      }
     }
   }
-    
+  
 }
 
 

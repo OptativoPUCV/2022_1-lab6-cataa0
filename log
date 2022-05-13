@@ -184,3 +184,17 @@ test.c:7:8: error: ‘_strdup’ defined but not used [-Werror=unused-function]
 cc1: all warnings being treated as errors
 Compilation failed
 72eaf6f
+Fri May 13 15:43:08 UTC 2022: 
+ sudoku.c | 42 +++++++++++-------------------------------
+ 1 file changed, 11 insertions(+), 31 deletions(-)
+In file included from test.c:5:0:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:52:28: error: self-comparison always evaluates to true [-Werror=tautological-compare]
+           if(n->sudo[f][c] == n->sudo[f][c]){
+                            ^~
+sudoku.c:62:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+Compilation failed
+fc4dd5d
