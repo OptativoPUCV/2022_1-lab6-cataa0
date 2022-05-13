@@ -49,7 +49,7 @@ int is_valid(Node* n){
     for(c = 0 ; c < 9 ; c++){
       if(n->sudo[f][c]){
         for(k = c + 1 ; k < 9 ; k++){
-          if(n->sudo[f][c] == n->sudo[f][c]){
+          if(n->sudo[f][c] == n->sudo[f][k]){
             printf("ERROR fila %hd\n", f);
             return 0;
             
