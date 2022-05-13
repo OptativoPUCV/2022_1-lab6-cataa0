@@ -57,6 +57,19 @@ int is_valid(Node* n){
       }
     }
   }
+  for(c = 0 ; c < 9 ; c++){
+    for(f = 0 ; f < 9 ; f++){
+      if(n->sudo[f][c]){
+        for(k = f + 1 ; k < 9 ; k++){
+          if(n->sudo[f][c] == n->sudo[k][c]]){
+            printf("ERROR columna %hd\n", c);
+            return 0;
+          }
+        }
+      }
+    }
+  }
+
 }
 
 List* get_adj_nodes(Node* n){
