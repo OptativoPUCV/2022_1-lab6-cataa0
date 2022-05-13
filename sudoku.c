@@ -61,7 +61,7 @@ int is_valid(Node* n){
     for(f = 0 ; f < 9 ; f++){
       if(n->sudo[f][c]){
         for(k = f + 1 ; k < 9 ; k++){
-          if(n->sudo[f][c] == n->sudo[k][c]]){
+          if(n->sudo[f][c] == n->sudo[k][c]){
             printf("ERROR columna %hd\n", c);
             return 0;
           }
