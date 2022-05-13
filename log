@@ -1,0 +1,46 @@
+Fri May 13 15:20:28 UTC 2022: 
+ sudoku.c | 36 +++++++++++++++++++++++++++++++++++-
+ 1 file changed, 35 insertions(+), 1 deletion(-)
+In file included from test.c:5:0:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:51:21: error: ‘c’ undeclared (first use in this function)
+         scanf("%c",&c);
+                     ^
+sudoku.c:51:21: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:52:9: error: ‘a’ undeclared (first use in this function)
+         a[i][j]=c-'0';
+         ^
+sudoku.c:55:5: error: ‘flag’ undeclared (first use in this function); did you mean ‘float’?
+     flag=0x0000;
+     ^~~~
+     float
+sudoku.c:59:9: error: implicit declaration of function ‘reporta’ [-Werror=implicit-function-declaration]
+         reporta("fila",i,j-1);
+         ^~~~~~~
+sudoku.c:68:7: error: ‘si’ undeclared (first use in this function); did you mean ‘i’?
+   for(si=0;si<3;si++){
+       ^~
+       i
+sudoku.c:69:9: error: ‘sj’ undeclared (first use in this function); did you mean ‘si’?
+     for(sj=0;sj<3;sj++)
+         ^~
+         si
+test.c:245:5: error: ‘main’ is normally a non-static function [-Werror=main]
+ int main( int argc, char *argv[] ) {
+     ^~~~
+test.c:262:1: error: expected declaration or statement at end of input
+ }
+ ^
+test.c:262:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+At top level:
+test.c:245:5: error: ‘main’ defined but not used [-Werror=unused-function]
+ int main( int argc, char *argv[] ) {
+     ^~~~
+test.c:7:8: error: ‘_strdup’ defined but not used [-Werror=unused-function]
+ char * _strdup(const char * str) {
+        ^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+33d9403
