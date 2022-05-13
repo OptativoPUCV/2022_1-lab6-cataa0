@@ -293,3 +293,20 @@ Fri May 13 15:54:32 UTC 2022:
  tests:  3|4
 total_score: 20/70
 1d012c1
+Fri May 13 16:04:52 UTC 2022: 
+ sudoku.c | 41 +++++++++++++++++++++++++++--------------
+ 1 file changed, 27 insertions(+), 14 deletions(-)
+In file included from test.c:5:0:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:70:28: error: ‘_CAJAS’ undeclared (first use in this function)
+   for(i = 0 ; i < 9 ; i += _CAJAS){
+                            ^~~~~~
+sudoku.c:70:28: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:77:52: error: ‘f’ undeclared (first use in this function)
+               if(n->sudo[i + ii][j + jj] ==n->sudo[f + k / _CAJAS][c + k % _CAJAS]){
+                                                    ^
+sudoku.c:77:68: error: ‘c’ undeclared (first use in this function)
+               if(n->sudo[i + ii][j + jj] ==n->sudo[f + k / _CAJAS][c + k % _CAJAS]){
+                                                                    ^
+Compilation failed
+cb1c49f

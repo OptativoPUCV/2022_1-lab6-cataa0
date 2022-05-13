@@ -44,32 +44,45 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-  int f, c, k;
-  for(f = 0 ; f < 9 ; f++){
-    for(c = 0 ; c < 9 ; c++){
-      if(n->sudo[f][c]){
-        for(k = c + 1 ; k < 9 ; k++){
-          if(n->sudo[f][c] == n->sudo[f][k]){
-            printf("ERROR fila %hd\n", f);
+  int i, j, k;
+  for(i = 0 ; i < 9 ; i++){
+    for(j = 0 ; j < 9 ; j++){
+      if(n->sudo[i][j]){
+        for(k = j + 1 ; k < 9 ; k++){
+          if(n->sudo[i][j] == n->sudo[i][k]){
             return 0;
           }
         }
       }
     }
   }
-  for(c = 0 ; c < 9 ; c++){
-    for(f = 0 ; f < 9 ; f++){
-      if(n->sudo[f][c]){
-        for(k = f + 1 ; k < 9 ; k++){
-          if(n->sudo[f][c] == n->sudo[k][c]){
-            printf("ERROR columna %hd\n", c);
+  for(j = 0 ; j < 9 ; j++){
+    for(i = 0 ; i < 9 ; i++){
+      if(n->sudo[i][j]){
+        for(k = i + 1 ; k < 9 ; k++){
+          if(n->sudo[i][j] == n->sudo[k][j]){
             return 0;
           }
         }
       }
     }
   }
-
+  for(i = 0 ; i < 9 ; i += _CAJAS){
+    for(j = 0 ; j < 9 ; j += _CAJAS){
+      short ii, jj;
+      for(ii = 0 ; ii < 9 / _CAJAS ; ii++){
+        for(jj = 0 ; jj < 9 / _CAJAS ; jj++){
+          if(n->sudo[i + ii][j + jj]){
+            for(k = ii * _CAJAS + jj + 1 ; k < 9; k++){
+              if(n->sudo[i + ii][j + jj] ==n->sudo[f + k / _CAJAS][c + k % _CAJAS]){
+                return 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }  
   return 1;
 }
 
