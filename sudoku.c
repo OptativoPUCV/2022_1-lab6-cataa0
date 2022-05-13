@@ -52,14 +52,12 @@ int is_valid(Node* n){
           if(n->sudo[f][c] == n->sudo[f][k]){
             printf("ERROR fila %hd\n", f);
             return 0;
-            
           }
         }
       }
     }
   }
 }
-
 
 List* get_adj_nodes(Node* n){
   List* list=createList();
