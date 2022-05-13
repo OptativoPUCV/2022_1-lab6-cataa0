@@ -310,3 +310,9 @@ sudoku.c:77:68: error: ‘c’ undeclared (first use in this function)
                                                                     ^
 Compilation failed
 cb1c49f
+Fri May 13 16:06:03 UTC 2022: 
+ sudoku.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+ tests:  3|4
+total_score: 20/70
+12ad494
