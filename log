@@ -384,3 +384,21 @@ sudoku.c:91:13: error: unused variable ‘k’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 2599456
+Sun May 15 23:27:12 UTC 2022: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:0:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:94:25: error: expected expression before ‘==’ token
+       if(n->sudo[i][j]) == 0){
+                         ^~
+sudoku.c:94:7: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+       if(n->sudo[i][j]) == 0){
+       ^~
+sudoku.c:94:29: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+       if(n->sudo[i][j]) == 0){
+                             ^
+sudoku.c:94:29: error: expected statement before ‘)’ token
+cc1: all warnings being treated as errors
+Compilation failed
+1c7bca0

@@ -91,10 +91,10 @@ List* get_adj_nodes(Node* n){
   int i, j, k;
   for(i = 0 ; i < 9 ; i++){
     for(j = 0 ; j < 9 ; j++){
-      if(n->sudo[i][j])==0{
-        for(k=1; k < 9;k++){
+      if(n->sudo[i][j]) == 0){
+        for(k = 1; k < 9;k++){
           Node *aux=copy(n);
-          aux->sudo[i][j]=k;
+          aux->sudo[i][j] = k;
         }
         return list;
       }  
