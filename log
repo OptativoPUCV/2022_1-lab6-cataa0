@@ -370,3 +370,17 @@ test.c:7:8: error: ‘_strdup’ defined but not used [-Werror=unused-function]
 cc1: all warnings being treated as errors
 Compilation failed
 6cf6f42
+Sun May 15 23:26:32 UTC 2022: 
+ sudoku.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+In file included from test.c:5:0:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:94:24: error: expected expression before ‘==’ token
+       if(n->sudo[i][j])==0{
+                        ^~
+sudoku.c:91:13: error: unused variable ‘k’ [-Werror=unused-variable]
+   int i, j, k;
+             ^
+cc1: all warnings being treated as errors
+Compilation failed
+2599456
