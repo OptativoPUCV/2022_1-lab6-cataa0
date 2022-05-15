@@ -402,3 +402,9 @@ sudoku.c:94:29: error: expected statement before ‘)’ token
 cc1: all warnings being treated as errors
 Compilation failed
 1c7bca0
+Sun May 15 23:27:45 UTC 2022: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  4|3
+total_score: 30/70
+bc58f54
