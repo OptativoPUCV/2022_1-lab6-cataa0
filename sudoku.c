@@ -127,8 +127,8 @@ Node* DFS(Node* initial, int* cont){
       return n;
     }
     List *list=get_adj_nodes(n);
-    Node *first=first(list);
-    while(first != NULL){
+    Node *primer=first(list);
+    while(primer != NULL){
       push(S, first);
       first=next(list); 
     }
