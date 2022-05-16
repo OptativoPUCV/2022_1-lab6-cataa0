@@ -448,3 +448,39 @@ sudoku.c:83:5: error: control reaches end of non-void function [-Werror=return-t
 cc1: all warnings being treated as errors
 Compilation failed
 b98713b
+Mon May 16 00:41:00 UTC 2022: 
+ sudoku.c | 3 ---
+ 1 file changed, 3 deletions(-)
+In file included from test.c:5:0:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:73:7: error: ‘ii’ undeclared (first use in this function); did you mean ‘i’?
+       ii=3*(i/3)+(j/3);
+       ^~
+       i
+sudoku.c:73:7: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:74:7: error: ‘jj’ undeclared (first use in this function); did you mean ‘j’?
+       jj=3*(i%3)+(j%3);
+       ^~
+       j
+sudoku.c:71:9: error: variable ‘aux’ set but not used [-Werror=unused-but-set-variable]
+     int aux[10]={0};
+         ^~~
+test.c:245:5: error: ‘main’ is normally a non-static function [-Werror=main]
+ int main( int argc, char *argv[] ) {
+     ^~~~
+test.c:262:1: error: expected declaration or statement at end of input
+ }
+ ^
+test.c:262:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+At top level:
+test.c:245:5: error: ‘main’ defined but not used [-Werror=unused-function]
+ int main( int argc, char *argv[] ) {
+     ^~~~
+test.c:7:8: error: ‘_strdup’ defined but not used [-Werror=unused-function]
+ char * _strdup(const char * str) {
+        ^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+ebddd25
