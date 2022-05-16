@@ -829,3 +829,13 @@ Mon May 16 01:35:54 UTC 2022:
  tests:  1|4
 total_score: 10/70
 9edef79
+Mon May 16 01:37:23 UTC 2022: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:0:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:75:10: error: expected expression before ‘[’ token
+       if([aux[n->sudo[auxi][auxj]] != 0){
+          ^
+Compilation failed
+aea10b5
