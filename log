@@ -800,3 +800,9 @@ sudoku.c:133:12: error: lvalue required as left operand of assignment
             ^
 Compilation failed
 8aec63c
+Mon May 16 01:28:10 UTC 2022: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  1|4
+total_score: 10/70
+daec169

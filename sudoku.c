@@ -130,7 +130,7 @@ Node* DFS(Node* initial, int* cont){
     Node *primer=first(list);
     while(primer != NULL){
       push(S, first);
-      first=next(list); 
+      primer=next(list); 
     }
     cont++;
   }
