@@ -839,3 +839,24 @@ sudoku.c:75:10: error: expected expression before ‘[’ token
           ^
 Compilation failed
 aea10b5
+Mon May 16 01:38:16 UTC 2022: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:0:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:75:10: error: expected expression before ‘[’ token
+       if([aux[n->sudo[auxi][auxj]] != 0){
+          ^
+sudoku.c:77:12: error: expected expression before ‘[’ token
+         if([aux[n->sudo[auxi][auxj]] == 0 && [aux[n->sudo[auxi][auxj]] != 0){
+            ^
+sudoku.c:80:7: error: expected ‘)’ before ‘}’ token
+       }
+       ^
+sudoku.c:80:7: error: expected expression before ‘}’ token
+sudoku.c:71:9: error: variable ‘aux’ set but not used [-Werror=unused-but-set-variable]
+     int aux[10]={0};
+         ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+a739924
