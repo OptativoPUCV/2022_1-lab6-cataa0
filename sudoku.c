@@ -76,9 +76,8 @@ int is_valid(Node* n){
         if(vali[n->sudo[auxi][auxj]] == 1){
           return 0;
         }
-        else{
-          vali[n->sudo[auxi][auxj]] = 1;
-        }    
+        else
+          vali[n->sudo[auxi][auxj]] = 1;    
       }
     }
   }
