@@ -484,3 +484,79 @@ test.c:7:8: error: ‘_strdup’ defined but not used [-Werror=unused-function]
 cc1: all warnings being treated as errors
 Compilation failed
 ebddd25
+Mon May 16 01:13:16 UTC 2022: 
+ sudoku.c | 17 +++++++++++++++--
+ 1 file changed, 15 insertions(+), 2 deletions(-)
+In file included from test.c:5:0:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:73:7: error: ‘ii’ undeclared (first use in this function); did you mean ‘i’?
+       ii=3*(i/3)+(j/3);
+       ^~
+       i
+sudoku.c:73:7: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:74:7: error: ‘jj’ undeclared (first use in this function); did you mean ‘j’?
+       jj=3*(i%3)+(j%3);
+       ^~
+       j
+sudoku.c:75:18: error: ‘auxi’ undeclared (first use in this function); did you mean ‘aux’?
+       if(n->sudo[auxi][auxj] != 0){
+                  ^~~~
+                  aux
+sudoku.c:75:24: error: ‘auxj’ undeclared (first use in this function); did you mean ‘aux’?
+       if(n->sudo[auxi][auxj] != 0){
+                        ^~~~
+                        aux
+sudoku.c:71:9: error: variable ‘aux’ set but not used [-Werror=unused-but-set-variable]
+     int aux[10]={0};
+         ^~~
+sudoku.c: In function ‘DFS’:
+sudoku.c:122:9: error: implicit declaration of function ‘size’ [-Werror=implicit-function-declaration]
+   while(size(S) != 0){
+         ^~~~
+sudoku.c:123:5: error: unknown type name ‘node’; did you mean ‘Node’?
+     node* n = pop(S);
+     ^~~~
+     Node
+sudoku.c:123:15: error: void value not ignored as it ought to be
+     node* n = pop(S);
+               ^~~
+sudoku.c:124:17: error: passing argument 1 of ‘is_final’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+     if(is_final(n)){
+                 ^
+sudoku.c:107:5: note: expected ‘Node * {aka struct <anonymous> *}’ but argument is of type ‘int *’
+ int is_final(Node* n){
+     ^~~~~~~~
+sudoku.c:125:14: error: return from incompatible pointer type [-Werror=incompatible-pointer-types]
+       return n;
+              ^
+sudoku.c:127:16: error: implicit declaration of function ‘get_adj_node’; did you mean ‘get_adj_nodes’? [-Werror=implicit-function-declaration]
+     List *list=get_adj_node(n);
+                ^~~~~~~~~~~~
+                get_adj_nodes
+sudoku.c:127:16: error: initialization makes pointer from integer without a cast [-Werror=int-conversion]
+sudoku.c:128:17: error: called object ‘first’ is not a function or function pointer
+     Node *first=first(list);
+                 ^~~~~
+sudoku.c:128:11: note: declared here
+     Node *first=first(list);
+           ^~~~~
+test.c: In function ‘is_valid’:
+test.c:245:5: error: ‘main’ is normally a non-static function [-Werror=main]
+ int main( int argc, char *argv[] ) {
+     ^~~~
+test.c:262:1: error: expected declaration or statement at end of input
+ }
+ ^
+test.c:262:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+At top level:
+test.c:245:5: error: ‘main’ defined but not used [-Werror=unused-function]
+ int main( int argc, char *argv[] ) {
+     ^~~~
+test.c:7:8: error: ‘_strdup’ defined but not used [-Werror=unused-function]
+ char * _strdup(const char * str) {
+        ^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+590cd28

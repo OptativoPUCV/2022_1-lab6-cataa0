@@ -72,7 +72,7 @@ int is_valid(Node* n){
     for(j = 0 ; j < 9 ; j++){
       ii=3*(i/3)+(j/3);
       jj=3*(i%3)+(j%3);  
-      if(n->sudo[ii][jj] != 0){
+      if(n->sudo[auxi][auxj] != 0){
         return 0;
         if(aux[n->sudo[ii][jj]] == 0 && aux[n->sudo[ii][jj]] != 0){
           aux[n->sudo[ii][jj]] = 1;
@@ -117,7 +117,20 @@ int is_final(Node* n){
 }
 
 Node* DFS(Node* initial, int* cont){
-  
+  Stack* S=createStack();
+  push(S, initial);
+  while(size(S) != 0){
+    node* n = pop(S);
+    if(is_final(n)){
+      return n;
+    }
+    List *list=get_adj_node(n);
+    Node *first=first(list);
+    while(first != NULL){
+      push(S, first);
+      first=next(list); 
+    }
+  }
   return NULL;
 }
 
