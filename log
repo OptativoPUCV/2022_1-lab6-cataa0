@@ -806,3 +806,14 @@ Mon May 16 01:28:10 UTC 2022:
  tests:  1|4
 total_score: 10/70
 daec169
+Mon May 16 01:34:36 UTC 2022: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:0:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:92:20: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+         for(k = 1; k = 9;k++){
+                    ^
+cc1: all warnings being treated as errors
+Compilation failed
+911a099
