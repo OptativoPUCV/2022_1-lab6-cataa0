@@ -73,8 +73,10 @@ int is_valid(Node* n){
       auxi=3*(i/3)+(j/3);
       auxj=3*(i%3)+(j%3); 
       if(n->sudo[auxi][auxj] != 0){
-        return 0;
-        if(vali[n->sudo[auxi][auxj]] == 0 && vali[n->sudo[auxi][auxj]] != 0){
+        if(vali[n->sudo[auxi][auxj]] == 1){
+          return 0;
+        }
+        else{
           vali[n->sudo[auxi][auxj]] = 1;
         }    
       }
