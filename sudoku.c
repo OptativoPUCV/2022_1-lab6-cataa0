@@ -67,16 +67,16 @@ int is_valid(Node* n){
       }
     }
   }
-  for(i = 0 ; i < 9 ; i++){
-    int [10]={0};
+  for(i = 0 ; i < 10 ; i++){
+    int vali[10]={0};
     for(j = 0 ; j < 9 ; j++){
       auxi=3*(i/3)+(j/3);
-      auxj=3*(i%3)+(j%3);  
-      if(aux[n->sudo[auxi][auxj]] != 0){
+      auxj=3*(i%3)+(j%3); 
+      if(vali[n->sudo[auxi][auxj]] != 0){
         return 0;
-      if(aux[n->sudo[auxi][auxj]] == 0 && aux[n->sudo[auxi][auxj]] != 0){
-        aux[n->sudo[auxi][auxj]] = 1;
-      }    
+        if(vali[n->sudo[auxi][auxj]] == 0 && vali[n->sudo[auxi][auxj]] != 0){
+          vali[n->sudo[auxi][auxj]] = 1;
+        }    
       }
     }
   }
