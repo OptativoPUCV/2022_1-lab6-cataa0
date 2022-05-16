@@ -36,9 +36,9 @@ Node* read_file (char* file_name){
 void print_node(Node* n){
     int i, j;
     for(i=0;i<9;i++){
-       for(j=0;j<9;j++)
-          printf("%d ", n->sudo[i][j]);
-       printf("\n");
+      for(j=0;j<9;j++)
+        printf("%d ", n->sudo[i][j]);
+      printf("\n");
     }
     printf("\n");
 }
@@ -72,11 +72,13 @@ int is_valid(Node* n){
     for(j = 0 ; j < 9 ; j++){
       auxi=3*(i/3)+(j/3);
       auxj=3*(i%3)+(j%3);  
-      if(aux[n->sudo[auxi][auxj]] != 0){
-        return 0;
-        if(aux[n->sudo[auxi][auxj]] == 0 && aux[n->sudo[auxi][auxj]] != 0){
-          aux[n->sudo[auxi][auxj]] = 1;
-        }    
+      if(n->sudo[auxi][auxj] != 0){
+        if(aux[n->sudo[auxi][auxj]-1] != 1){
+        aux[n->sudo[auxi][auxj]] = 1;
+        }
+        else{
+          return 0;
+        }
       }
     }
   }
@@ -89,10 +91,10 @@ List* get_adj_nodes(Node* n){
   for(i = 0 ; i < 9 ; i++){
     for(j = 0 ; j < 9 ; j++){
       if(n->sudo[i][j] == 0){
-        for(k = 1; k < 10;k++){
-          Node *aux=copy(n);
+        for(k = 1 ; k < 10 ; k++){
+          Node *aux = copy(n);
           aux->sudo[i][j] = k;
-          if (is_valid(aux)){
+          if(is_valid(aux)){
             pushBack(list, aux);
           }
         }
@@ -121,12 +123,12 @@ Node* DFS(Node* initial, int* cont){
   Stack* S=createStack();
   push(S, initial);
   while(is_empty(S) == 0){
-    Node* n = top(S); 
+    Node *n = top(S); 
     pop(S);
     if(is_final(n)){
       return n;
     }
-    List *list=get_adj_nodes(n);
+    List *list = get_adj_nodes(n);
     Node *primer=first(list);
     while(primer != NULL){
       push(S, primer);
