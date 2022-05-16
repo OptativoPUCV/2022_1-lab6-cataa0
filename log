@@ -777,3 +777,16 @@ sudoku.c:129:11: note: declared here
            ^~~~~
 Compilation failed
 adcbbda
+Mon May 16 01:27:29 UTC 2022: 
+ sudoku.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+In file included from test.c:5:0:
+sudoku.c: In function ‘DFS’:
+sudoku.c:130:17: error: called object ‘first’ is not a function or function pointer
+     Node *first=first(list);
+                 ^~~~~
+sudoku.c:130:11: note: declared here
+     Node *first=first(list);
+           ^~~~~
+Compilation failed
+5a6f6e5
