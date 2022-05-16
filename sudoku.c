@@ -67,17 +67,16 @@ int is_valid(Node* n){
       }
     }
   }
-  for(i = 0 ; i < 9 ; i += 9){
-    for(j = 0 ; j < 9 ; j += 9){
-      short ii, jj;
-      for(ii = 0 ; ii < 9 / 9 ; ii++){
-        for(jj = 0 ; jj < 9 / 9 ; jj++){
-          if(n->sudo[i + ii][j + jj]){
-            for(k = ii * 9 + jj + 1 ; k < 9; k++){
-              if(n->sudo[i + ii][j + jj] == n->sudo[i + k / 9][j + k % 9]){
-                return 0;
-              }
-            }
+  for(i = 0 ; i < 9 ; i++){
+    int aux[10]={0};
+        for(j = 0 ; j < 9 ; j++){
+          ii=3*(i/3)+(j/3);
+          jj=3*(i%3)+(j%3);  
+          if(n->sudo[ii][jj] != 0){
+            return 0;
+          }
+          if(aux[n->sudo[ii][jj]] == 0 && aux[n->sudo[ii][jj]] != 0){
+            aux[n->sudo[ii][jj]] = 1;
           }
         }
       }
@@ -121,6 +120,7 @@ int is_final(Node* n){
 }
 
 Node* DFS(Node* initial, int* cont){
+  
   return NULL;
 }
 

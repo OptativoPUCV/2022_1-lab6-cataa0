@@ -414,3 +414,37 @@ Sun May 15 23:29:32 UTC 2022:
  tests:  6|2
 total_score: 45/70
 522ed40
+Mon May 16 00:32:45 UTC 2022: 
+ sudoku.c | 17 ++++++++---------
+ 1 file changed, 8 insertions(+), 9 deletions(-)
+In file included from test.c:5:0:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:73:11: error: ‘ii’ undeclared (first use in this function); did you mean ‘i’?
+           ii=3*(i/3)+(j/3);
+           ^~
+           i
+sudoku.c:73:11: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:74:11: error: ‘jj’ undeclared (first use in this function); did you mean ‘j’?
+           jj=3*(i%3)+(j%3);
+           ^~
+           j
+sudoku.c:71:9: error: variable ‘aux’ set but not used [-Werror=unused-but-set-variable]
+     int aux[10]={0};
+         ^~~
+sudoku.c: At top level:
+sudoku.c:84:3: error: expected identifier or ‘(’ before ‘}’ token
+   }
+   ^
+sudoku.c:85:3: error: expected identifier or ‘(’ before ‘return’
+   return 1;
+   ^~~~~~
+sudoku.c:86:1: error: expected identifier or ‘(’ before ‘}’ token
+ }
+ ^
+sudoku.c: In function ‘is_valid’:
+sudoku.c:83:5: error: control reaches end of non-void function [-Werror=return-type]
+     }
+     ^
+cc1: all warnings being treated as errors
+Compilation failed
+b98713b
