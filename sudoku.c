@@ -72,7 +72,7 @@ int is_valid(Node* n){
     for(j = 0 ; j < 9 ; j++){
       auxi=3*(i/3)+(j/3);
       auxj=3*(i%3)+(j%3); 
-      if(vali[n->sudo[auxi][auxj]] != 0){
+      if(n->sudo[auxi][auxj] != 0){
         return 0;
         if(vali[n->sudo[auxi][auxj]] == 0 && vali[n->sudo[auxi][auxj]] != 0){
           vali[n->sudo[auxi][auxj]] = 1;
