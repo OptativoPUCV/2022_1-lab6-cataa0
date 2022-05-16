@@ -872,3 +872,13 @@ Mon May 16 01:41:55 UTC 2022:
  tests:  6|2
 total_score: 45/70
 5cb590a
+Mon May 16 01:44:31 UTC 2022: 
+ sudoku.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:0:
+sudoku.c: In function ‘DFS’:
+sudoku.c:135:11: error: expected expression before ‘)’ token
+     (cont*)++;
+           ^
+Compilation failed
+972d643
