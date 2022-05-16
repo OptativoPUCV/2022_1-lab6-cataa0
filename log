@@ -709,3 +709,23 @@ sudoku.c:129:11: note: declared here
            ^~~~~
 Compilation failed
 71f0bf4
+Mon May 16 01:24:18 UTC 2022: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:0:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:92:23: error: expected expression before ‘<’ token
+         for(k = 1; k =< 9;k++){
+                       ^
+sudoku.c: In function ‘DFS’:
+sudoku.c:124:15: error: void value not ignored as it ought to be
+     Node* n = pop(S);
+               ^~~
+sudoku.c:129:17: error: called object ‘first’ is not a function or function pointer
+     Node *first=first(list);
+                 ^~~~~
+sudoku.c:129:11: note: declared here
+     Node *first=first(list);
+           ^~~~~
+Compilation failed
+c422de0
