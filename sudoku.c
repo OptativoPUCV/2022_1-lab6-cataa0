@@ -91,7 +91,7 @@ List* get_adj_nodes(Node* n){
       if(n->sudo[i][j] == 0){
         for(k = 1; k <= 9;k++){
           Node *aux=copy(n);
-          aux->sudo[i][j] = k;
+          k=aux->sudo[i][j];
           if (is_valid(aux)){
             pushBack(list, aux);
           }
