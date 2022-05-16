@@ -673,3 +673,23 @@ sudoku.c:129:11: note: declared here
 cc1: all warnings being treated as errors
 Compilation failed
 9a0f6c7
+Mon May 16 01:22:54 UTC 2022: 
+ sudoku.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+In file included from test.c:5:0:
+sudoku.c: In function ‘DFS’:
+sudoku.c:123:9: error: implicit declaration of function ‘size’ [-Werror=implicit-function-declaration]
+   while(size(S) != 0){
+         ^~~~
+sudoku.c:124:15: error: void value not ignored as it ought to be
+     Node* n = pop(S);
+               ^~~
+sudoku.c:129:17: error: called object ‘first’ is not a function or function pointer
+     Node *first=first(list);
+                 ^~~~~
+sudoku.c:129:11: note: declared here
+     Node *first=first(list);
+           ^~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+c405c2f

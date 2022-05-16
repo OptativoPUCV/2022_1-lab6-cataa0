@@ -121,16 +121,17 @@ Node* DFS(Node* initial, int* cont){
   Stack* S=createStack();
   push(S, initial);
   while(size(S) != 0){
-    node* n = pop(S);
+    Node* n = pop(S);
     if(is_final(n)){
       return n;
     }
-    List *list=get_adj_node(n);
+    List *list=get_adj_nodes(n);
     Node *first=first(list);
     while(first != NULL){
       push(S, first);
       first=next(list); 
     }
+    cont++;
   }
   return NULL;
 }
